@@ -1,0 +1,20 @@
+{
+  "name": "Auto-Serwis Kowalski – warsztat samochodowy w Lublinie",
+  "short_name": "AS Kowalski",
+  "description": "Mechanika, diagnostyka komputerowa i serwis klimatyzacji w Lublinie.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#131316",
+  "theme_color": "#131316",
+  "lang": "pl",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
-# Nuxt
+# ---> Vercel deploy: te pliki MUSZĄ być w repo. Nic więcej nie trzeba.
+node_modules/
 .nuxt/
 .output/
 .data/
-node_modules/
+dist/
+*.log
+.DS_Store
+Thumbs.db

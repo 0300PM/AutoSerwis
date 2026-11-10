@@ -5,14 +5,30 @@ const title = 'Auto-Serwis Kowalski – mechanik Lublin, diagnostyka, klimatyzac
 const description =
   'Warsztat samochodowy w Lublinie: mechanika, diagnostyka komputerowa, serwis klimatyzacji, opony i wymiana oleju. Sprawdź cennik i poproś o wycenę.'
 
+// Absolutny URL strony — na Vercel ustaw NUXT_PUBLIC_SITE_URL,
+// lokalnie fallback do localhost.
+const siteUrl =
+  useRuntimeConfig().public.siteUrl || (import.meta.dev ? 'http://localhost:3000' : '')
+const canonical = siteUrl ? `${siteUrl}/` : '/'
+
 useHead({
   title,
+  link: [{ rel: 'canonical', href: canonical }],
   meta: [
     { name: 'description', content: description },
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
     { property: 'og:type', content: 'website' },
-    { name: 'twitter:card', content: 'summary_large_image' }
+    { property: 'og:url', content: canonical },
+    { property: 'og:image', content: `${siteUrl}/og-cover.jpg` },
+    { property: 'og:image:width', content: '1200' },
+    { property: 'og:image:height', content: '630' },
+    {
+      property: 'og:image:alt',
+      content: 'Auto-Serwis Kowalski – mechanika, diagnostyka, klimatyzacja'
+    },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:image', content: `${siteUrl}/og-cover.jpg` }
   ],
   script: [
     {

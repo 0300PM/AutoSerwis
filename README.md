@@ -4,7 +4,25 @@ Przepisana wersja strony z `C:/Users/anysz/Desktop/garage`
 (TanStack Start + React) na **Nuxt 3 + Vue 3 + Tailwind CSS v4 + TypeScript**.
 Układ i treści (UI/UX) zachowane 1:1 — dodane są tylko animacje i loadery.
 
-## Start
+## Deploy na Vercel (2 kroki)
+
+1. **Wypchnij repo na GitHub:**
+   ```sh
+   cd garage-nuxt
+   gh repo create garage-nuxt --private --source=. --push
+   # albo ręcznie: utwórz puste repo na github.com i:
+   # git remote add origin https://github.com/TWOJ-LOGIN/garage-nuxt.git
+   # git push -u origin main
+   ```
+2. **Zaimportuj na Vercel:** vercel.com → *Add New → Project* → wybierz repo.
+   Vercel sam wykryje Nuxt (`vercel.json` już w repo). Nic nie zmieniaj:
+   Build Command `npm run build`, Output `.output/public`.
+   Opcjonalnie dodaj zmienną środowiskową (Settings → Environment Variables):
+   `NUXT_PUBLIC_SITE_URL` = `https://twoja-domena.vercel.app` (absolutne og:image/canonical).
+
+Gotowe — każdy `git push` to automatyczny redeploy.
+
+## Start lokalnie
 
 ```sh
 cd garage-nuxt
